@@ -1,5 +1,5 @@
 <template>
-  <form action="" @submit="handleRegister($event)">
+  <form @submit="handleRegister">
     <div>
       <input v-model="model.name" type="text" placeholder="nombre" />
     </div>
@@ -34,9 +34,10 @@ export default {
   methods: {
     handleRegister(event) {
       event.preventDefault();
-      console.log(this.model.name);
-      console.log(this.model.typeId);
-      console.log(this.model.numberId);
+      // Acá va el codigo para enviar la data a strapi
+
+      // Las datos ingresados por el usuario estan en el modelo, si
+      // quiere acceder a la variable nombre por ejemplo se usa this.model.name
     },
   },
 };
