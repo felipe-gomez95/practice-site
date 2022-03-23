@@ -15,6 +15,22 @@
       />
     </div>
     <div>
+      <select v-model="model.country">
+        <option
+          v-for="country in countries"
+          :key="country.value"
+          :value="country.value"
+        >
+          {{ country.name }}
+        </option>
+      </select>
+      <select v-model="model.state">
+        <option value="1"></option>
+        <option value="2"></option>
+        <option value="3"></option>
+      </select>
+    </div>
+    <div>
       <button type="submit">enviar</button>
     </div>
   </form>
@@ -28,7 +44,23 @@ export default {
         name: "",
         typeId: "",
         numberId: "",
+        country: "",
+        state: "",
       },
+      countries: [
+        {
+          name: "Colombia",
+          value: 57,
+        },
+        {
+          name: "Bolivia",
+          value: 24,
+        },
+        {
+          name: "Peru",
+          value: 48,
+        },
+      ],
     };
   },
   methods: {
